@@ -24,118 +24,171 @@
         <div class="row">
             <div class="col-sm-6">
                 <h1 id="Ddate" title="对上个月进行结算"></h1>
-                <div class="instructors">
+                <div class="employees">
                     <div class="form-group form-inline">
-                        <button onclick="instructor(this,'Ava',1);" type="button" class="btn btn-default">Ava</button>
-                        <button onclick="instructor(this,'Miranda',1);" type="button"
+                        <button onclick="employee(this,'Ava',5);" type="button" class="btn btn-default">Ava</button>
+                        <button onclick="employee(this,'Miranda',1);" type="button"
                             class="btn btn-default">Miranda</button>
-                        <button onclick="instructor(this,'Jessie',1);" type="button"
+                        <button onclick="employee(this,'Jessie',1);" type="button"
                             class="btn btn-default">Jessie</button>
                     </div>
                     <div class="form-group form-inline">
-                        <button onclick="instructor(this,'Charles',2);" type="button"
+                        <button onclick="employee(this,'Charles',2);" type="button"
                             class="btn btn-default">Charles（初级）</button>
                     </div>
-                </div>
-                <div class="form-group form-inline">
-                    <label class="sr-only" for="D400p">Amount</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">400 私教</div>
-                        <input type="text" value="3" class="form-control" id="D400p" placeholder="课数">
-                        <div class="input-group-addon">节</div>
+                    <div class="form-group form-inline">
+                        <button onclick="employee(this,'Sibyl',3);" type="button" class="btn btn-default">Sibyl</button>
                     </div>
                 </div>
-                <div class="form-group form-inline">
-                    <label class="sr-only" for="D500p">Amount</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">500 私教</div>
-                        <input type="text" value="4" class="form-control" id="D500p" placeholder="课数">
-                        <div class="input-group-addon">节</div>
-                    </div>
-                </div>
-                <div class="form-group form-inline">
-                    <label class="sr-only" for="D600p">Amount</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">600 私教</div>
-                        <input type="text" value="23" class="form-control" id="D600p" placeholder="课数">
-                        <div class="input-group-addon">节</div>
-                    </div>
-                </div>
-                <div class="form-group form-inline">
-                    <label class="sr-only" for="D700p">Amount</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">700 私教</div>
-                        <input type="text" value="7" class="form-control" id="D700p" placeholder="课数">
-                        <div class="input-group-addon">节</div>
-                    </div>
-                </div>
-                <div class="form-group form-inline">
-                    <label class="sr-only" for="D800p">Amount</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">800 私教</div>
-                        <input type="text" value="15" class="form-control" id="D800p" placeholder="课数">
-                        <div class="input-group-addon">节</div>
-                    </div>
-                </div>
-                <div class="form-group form-inline">
-                    <label class="sr-only" for="Dreturn">Amount</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">800 返费</div>
-                        <input type="text" value="0" class="form-control" id="Dreturn" placeholder="节数">
-                        <div class="input-group-addon">节</div>
-                    </div>
-                </div>
-                <div class="form-group form-inline">
-                    <label class="sr-only" for="DSmallClass">Amount</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">小班团课</div>
-                        <input type="text" value="60" class="form-control" id="DSmallClass" placeholder="课数">
-                        <div class="input-group-addon">节</div>
-                    </div>
-                </div>
-                <div class="form-group form-inline">
-                    <label class="sr-only" for="DSmallClass_p">Amount</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">小班私教</div>
-                        <input type="text" value="40" class="form-control" id="DSmallClass_p" placeholder="课数（包括体验课）">
-                        <div class="input-group-addon">节</div>
-                    </div>
-                </div>
-                <div class="form-group form-inline">
-                    <label class="sr-only" for="Dsales">Amount</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">月度出单</div>
-                        <input type="text" value="5" class="form-control" id="Dsales" placeholder="数量（体验+介绍）">
-                        <div class="input-group-addon">张</div>
-                    </div>
-                </div>
-                <div class="form-group form-inline">
-                    <label class="sr-only" for="Dreduce">Amount</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">月度减分</div>
-                        <input type="text" value="1.175" class="form-control" id="Dreduce" placeholder="本月减分+上月背负">
-                        <div class="input-group-addon">分</div>
-                    </div>
-                </div>
-                <div class="form-group form-inline">
-                    <label class="sr-only" for="Dreturn">Amount</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">本月课费</div>
-                        <div class="dropup">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                政策
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <li><a href="javascrpt:void(0)" onclick="handlePolicy(0);">无</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="javascrpt:void(0)" onclick="handlePolicy(20);">每节减20元</a></li>
-                                <li><a href="javascrpt:void(0)" onclick="handlePolicy(50);">每节减50元</a></li>
-                            </ul>
+                <div class="salesInfo">
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="DmonthTarget">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">业绩指标</div>
+                            <input type="text" value="25" class="form-control" id="DmonthTarget" placeholder="本月销售业绩指标">
+                            <div class="input-group-addon">元</div>
                         </div>
-                        <div class="input-group-addon">
-                            <div id="Dpolicy">无</div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="DmonthSales">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">实际业绩</div>
+                            <input type="text" value="30" class="form-control" id="DmonthSales" placeholder="本月实际总销售业绩">
+                            <div class="input-group-addon">元</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="basePay">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">固定底薪</div>
+                            <input type="text" readonly="readonly" class="form-control" id="basePay" placeholder="固定底薪">
+                            <div class="input-group-addon">元</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipeInfo">
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="recipe_1">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">食谱（第一个月）</div>
+                            <input type="text" value="4" class="form-control" id="recipe_1" placeholder="数量">
+                            <div class="input-group-addon">个</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="recipe_2">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">食谱（第二个月）</div>
+                            <input type="text" value="3" class="form-control" id="recipe_2" placeholder="数量">
+                            <div class="input-group-addon">个</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="privateClassInfo">
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="D400p">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">400 私教</div>
+                            <input type="text" value="3" class="form-control" id="D400p" placeholder="课数">
+                            <div class="input-group-addon">节</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="D500p">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">500 私教</div>
+                            <input type="text" value="4" class="form-control" id="D500p" placeholder="课数">
+                            <div class="input-group-addon">节</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="D600p">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">600 私教</div>
+                            <input type="text" value="23" class="form-control" id="D600p" placeholder="课数">
+                            <div class="input-group-addon">节</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="D700p">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">700 私教</div>
+                            <input type="text" value="7" class="form-control" id="D700p" placeholder="课数">
+                            <div class="input-group-addon">节</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="D800p">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">800 私教</div>
+                            <input type="text" value="15" class="form-control" id="D800p" placeholder="课数">
+                            <div class="input-group-addon">节</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="Dreturn">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">800 返费</div>
+                            <input type="text" value="0" class="form-control" id="Dreturn" placeholder="节数">
+                            <div class="input-group-addon">节</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="baseInstructorInfo">
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="DSmallClass">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">小班团课</div>
+                            <input type="text" value="60" class="form-control" id="DSmallClass" placeholder="课数">
+                            <div class="input-group-addon">节</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="DSmallClass_p">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">小班私教</div>
+                            <input type="text" value="40" class="form-control" id="DSmallClass_p"
+                                placeholder="课数（包括体验课）">
+                            <div class="input-group-addon">节</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="Dsales">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">月度出单</div>
+                            <input type="text" value="5" class="form-control" id="Dsales" placeholder="数量（体验+介绍）">
+                            <div class="input-group-addon">张</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="Dreduce">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">月度减分</div>
+                            <input type="text" value="1.175" class="form-control" id="Dreduce" placeholder="本月减分+上月背负">
+                            <div class="input-group-addon">分</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="sr-only" for="Dreturn">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">本月课费</div>
+                            <div class="dropup">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    政策
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <li><a href="javascrpt:void(0)" onclick="handlePolicy(0);">无</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascrpt:void(0)" onclick="handlePolicy(20);">每节减20元</a></li>
+                                    <li><a href="javascrpt:void(0)" onclick="handlePolicy(50);">每节减50元</a></li>
+                                </ul>
+                            </div>
+                            <div class="input-group-addon">
+                                <div id="Dpolicy">无</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -147,63 +200,67 @@
             </div>
             <div class="col-sm-6">
                 <div class="row">
-                    <h1>计算结果</h1>
+                    <h1 id="DdateResult" title="月度总结">计算结果</h1>
                     <div class="form-group form-inline">
-                        <label class="sr-only" for="instructorName">name</label>
+                        <label class="sr-only" for="employeeName">name</label>
                         <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span>教练名称</div>
-                            <button class="btn btn-primary form-control" id="instructorName" placeholder="姓名"></button>
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span>员工名称</div>
+                            <button class="btn btn-primary form-control" id="employeeName" placeholder="姓名"></button>
                         </div>
                     </div>
                     <div class="form-group form-inline">
-                        <label class="sr-only" for="instructorLevel">level</label>
+                        <label class="sr-only" for="employeeRole">role</label>
                         <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-tree-deciduous"></span>教练级别
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-tree-deciduous"></span>员工角色
                             </div>
-                            <button class="btn btn-success form-control" id="instructorLevel" placeholder="级别"></button>
+                            <button class="btn btn-success form-control" id="employeeRole" placeholder="级别"></button>
                         </div>
                     </div>
                     <div class="form-group form-inline">
-                        <label class="sr-only" for="instructorClassFee">ClassFee</label>
+                        <label class="sr-only" for="employeeSalary">ClassFee</label>
                         <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-usd"></span>月度课费
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-usd"></span>月度薪水
                             </div>
-                            <button class="btn btn-warning form-control" id="instructorClassFee"
-                                placeholder="课费"></button>
+                            <button class="btn btn-warning form-control" id="employeeSalary" placeholder="课费"></button>
                         </div>
                     </div>
-                    <div class="form-group form-inline">
-                        <label class="sr-only" for="instructorContribute">Contribute</label>
-                        <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-thumbs-up"></span>月度贡献
+                    <div class="instrutorPolicyInfo">
+                        <div class="form-group form-inline">
+                            <label class="sr-only" for="employeeContribute">Contribute</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-thumbs-up"></span>月度贡献
+                                </div>
+                                <button class="btn btn-info form-control" id="employeeContribute"
+                                    placeholder="贡献分"></button>
                             </div>
-                            <button class="btn btn-info form-control" id="instructorContribute"
-                                placeholder="贡献分"></button>
                         </div>
-                    </div>
-                    <div class="form-group form-inline">
-                        <label class="sr-only" for="instructorReduce">reduce</label>
-                        <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-thumbs-down"></span>月度减分
+                        <div class="form-group form-inline">
+                            <label class="sr-only" for="employeeReduce">reduce</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-thumbs-down"></span>月度减分
+                                </div>
+                                <button class="btn btn-danger form-control" id="employeeReduce"
+                                    placeholder="减分"></button>
                             </div>
-                            <button class="btn btn-danger form-control" id="instructorReduce" placeholder="减分"></button>
                         </div>
-                    </div>
-                    <div class="form-group form-inline">
-                        <label class="sr-only" for="instructorCarry">carry</label>
-                        <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-warning-sign"></span>下月背负
+                        <div class="form-group form-inline">
+                            <label class="sr-only" for="employeeCarry">carry</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span
+                                        class="glyphicon glyphicon-warning-sign"></span>下月背负
+                                </div>
+                                <button class="btn btn-danger form-control" id="employeeCarry"
+                                    placeholder="背负"></button>
                             </div>
-                            <button class="btn btn-danger form-control" id="instructorCarry" placeholder="背负"></button>
                         </div>
-                    </div>
-                    <div class="form-group form-inline">
-                        <label class="sr-only" for="instructorNextPolicy">NextPolicy</label>
-                        <div class="input-group">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-bell"></span>下月政策
+                        <div class="form-group form-inline">
+                            <label class="sr-only" for="employeeNextPolicy">NextPolicy</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-bell"></span>下月政策
+                                </div>
+                                <button class="btn btn-danger form-control" id="employeeNextPolicy"
+                                    placeholder="下月政策"></button>
                             </div>
-                            <button class="btn btn-danger form-control" id="instructorNextPolicy"
-                                placeholder="下月政策"></button>
                         </div>
                     </div>
                 </div>
@@ -225,8 +282,14 @@
         //获取当前月
         var month = myDate.getMonth();
         $("#Ddate").html(year + "年" + month + "月");
+        $("#DdateResult").html(year + "年" + month + "月_工作总结");
+        $(".privateClassInfo").hide();
+        $(".baseInstructorInfo").hide();
+        $(".salesInfo").hide();
+        $(".recipeInfo").hide();
+        $(".instrutorPolicyInfo").hide();
     });
-    // config
+    // --------------------------- config start ---------------------------
     // 私教课费标准
     var D400pFeeper = 200;
     var D500pFeeper = 250;
@@ -237,36 +300,93 @@
     var DSmallClassFeeper_1 = 150; // 高级教练小班团课课费标准
     var DSmallClassFeeper_2 = 120; // 初级教练小班团课课费标准
     var DSmallClass_pFeeper = 150; // 小班私教以及体验课课费标准
-    // 贡献基本标
+    // 月贡献基本标
     var contributionClassAmount_1 = 100; // 高级教练贡献算法：每月最少上课数量标准
     var contributionClassAmount_2 = 150; // 初级教练贡献算法：每月最少上课数量标准
     var contributionSales = 4;
-    // var
-    var instructor_name;
-    var instructor_level;
-    var instructor_policy = 0;
+    // 固定底薪
+    var role3_base = 6000; // 销售总监每月固定底薪
+    var role5_base = 3000; // 店长每月固定底薪
+    // 销售提成
+    var role3_miss = 0.03;
+    var role3_reach = 0.04;
+    var all_superplus_bonus = 1000;
+    var role5_miss = 0.01;
+    var role5_reach = 0.02;
+    // 食谱工资
+    var recipe1_unit = 1000;
+    var recipe2_unit = 500;
+    // --------------------------- config end ---------------------------
+    // global vars
+    var employee_name;
+    var employee_role;
+    var employee_policy = 0;
+
     function handlePolicy(flag) {
-        instructor_policy = flag;
+        employee_policy = flag;
         if (flag == 0) {
             $("#Dpolicy").html("无");
         } else {
             $("#Dpolicy").html("每节减" + flag + "元");
         }
     }
-    function instructor(obj, name, level) {
-        instructor_name = name;
-        instructor_level = level;
-        $.each($(".instructors").find("button"), function () {
-            $(this).attr("class","btn btn-default");
+    /*
+        role 1: 高级教练
+        role 2: 初级教练
+        role 3: 销售总监
+        role 5: 高级教练兼店长（特指Ava）
+    */
+    function employee(obj, name, role) {
+        employee_name = name;
+        employee_role = parseInt(role);
+        $.each($(".employees").find("button"), function () {
+            $(this).attr("class", "btn btn-default");
         });
-        $(obj).attr("class","btn btn-warning");
+        $(obj).attr("class", "btn btn-warning");
+        switch (employee_role) {
+            case 1:
+                $(".privateClassInfo").show();
+                $(".baseInstructorInfo").show();
+                $(".salesInfo").hide();
+                $(".recipeInfo").hide();
+                $(".instrutorPolicyInfo").show();
+                break;
+            case 2:
+                $(".privateClassInfo").hide();
+                $(".baseInstructorInfo").show();
+                $(".salesInfo").hide();
+                $(".recipeInfo").hide();
+                $(".instrutorPolicyInfo").show();
+                break;
+            case 3:
+                $(".privateClassInfo").hide();
+                $(".baseInstructorInfo").hide();
+                $(".salesInfo").show();
+                $(".recipeInfo").show();
+                $(".instrutorPolicyInfo").hide();
+                $("#basePay").val(role3_base);
+                break;
+            case 5:
+                $(".privateClassInfo").show();
+                $(".baseInstructorInfo").show();
+                $(".salesInfo").show();
+                $(".recipeInfo").hide();
+                $(".instrutorPolicyInfo").show();
+                $("#basePay").val(role5_base);
+                break;
+        }
     }
     function calculate() {
-        if (instructor_name == null) {
-            alert("请选择教练！");
+        if (employee_name == null) {
+            alert("请选择一名员工！");
             return 0;
         }
-        $("#instructorName").html(instructor_name);
+        $("#employeeName").html(employee_name);
+        var MonthTarget = parseInt($("#DmonthTarget").val());
+        var ActualSales = parseInt($("#DmonthSales").val());
+        var BasePay = parseInt($("#basePay").val());
+        var recipe1_amount = parseInt($("#recipe_1").val());
+        var recipe2_amount = parseInt($("#recipe_2").val());
         var D400p_amount = parseInt($("#D400p").val());
         var D500p_amount = parseInt($("#D500p").val());
         var D600p_amount = parseInt($("#D600p").val());
@@ -278,38 +398,66 @@
         var Dsales_amount = parseInt($("#Dsales").val());
         var Dreduce_amount = parseFloat($("#Dreduce").val());
         var contribution;
-        if (instructor_level == 1) {
-            $("#instructorLevel").html("高级教练");
-            var fee = D400p_amount * (D400pFeeper - instructor_policy)
-                + D500p_amount * (D500pFeeper - instructor_policy)
-                + D600p_amount * (D600pFeeper - instructor_policy)
-                + D700p_amount * (D700pFeeper - instructor_policy)
-                + D800p_amount * (D800pFeeper - instructor_policy)
-                + Dreturn_amount * 50
-                + DSmallClass_amount * DSmallClassFeeper_1
-                + DSmallClass_p_amount * DSmallClass_pFeeper;
-            contribution = ((DSmallClass_amount + DSmallClass_p_amount) / contributionClassAmount_1 + Dsales_amount / contributionSales) / 2;
-        } else if (instructor_level == 2) {
-            $("#instructorLevel").html("初级教练");
-            var fee = DSmallClass_amount * DSmallClassFeeper_2
-                + DSmallClass_p_amount * DSmallClass_pFeeper;
-            contribution = (DSmallClass_amount + DSmallClass_p_amount) / contributionClassAmount_2;
+        var fee;
+
+        // instructor fileds
+        if (employee_role == 1 || employee_role == 2 || employee_role == 5) {
+            if (employee_role == 1 || employee_role == 5) {
+                $("#employeeRole").html("高级教练");
+                fee = D400p_amount * (D400pFeeper - employee_policy)
+                    + D500p_amount * (D500pFeeper - employee_policy)
+                    + D600p_amount * (D600pFeeper - employee_policy)
+                    + D700p_amount * (D700pFeeper - employee_policy)
+                    + D800p_amount * (D800pFeeper - employee_policy)
+                    + Dreturn_amount * 50
+                    + DSmallClass_amount * DSmallClassFeeper_1
+                    + DSmallClass_p_amount * DSmallClass_pFeeper;
+                contribution = ((DSmallClass_amount + DSmallClass_p_amount) / contributionClassAmount_1 + Dsales_amount / contributionSales) / 2;
+            } else if (employee_role == 2) {
+                $("#employeeRole").html("初级教练");
+                fee = DSmallClass_amount * DSmallClassFeeper_2
+                    + DSmallClass_p_amount * DSmallClass_pFeeper;
+                contribution = (DSmallClass_amount + DSmallClass_p_amount) / contributionClassAmount_2;
+            }
+            contribution = new Number(contribution).toFixed(3);
+            $("#employeeContribute").html(contribution);
+            $("#employeeReduce").html(Dreduce_amount);
+            $("#employeeNextPolicy").html("加油！");
+            var carry = Dreduce_amount - 0.5;
+            if (carry > 0) {
+                $("#employeeCarry").html(carry);
+                $("#employeeNextPolicy").html("每节课费减去20元");
+            } else {
+                $("#employeeCarry").html(0);
+            }
+            var sum = contribution - Dreduce_amount;
+            if (sum < 0) {
+                $("#employeeNextPolicy").html("每节课费减去50元");
+            }
         }
-        contribution = new Number(contribution).toFixed(3);
-        $("#instructorContribute").html(contribution);
-        $("#instructorReduce").html(Dreduce_amount);
-        $("#instructorNextPolicy").html("加油！");
-        var carry = Dreduce_amount - 0.5;
-        if (carry > 0) {
-            $("#instructorCarry").html(carry);
-            $("#instructorNextPolicy").html("每节课费减去20元");
-        } else {
-            $("#instructorCarry").html(0);
+        // sales fields
+        if (ActualSales / MonthTarget >= 1.5) {
+            fee = fee + all_superplus_bonus;
         }
-        var sum = contribution - Dreduce_amount;
-        if (sum < 0) {
-            $("#instructorNextPolicy").html("每节课费减去50元");
+        if (employee_role == 5) {
+            $("#employeeRole").html("店长兼高级教练");
+            if (ActualSales < MonthTarget) {
+                fee = fee + ActualSales * role5_miss;
+            } else {
+                fee = fee + ActualSales * role5_reach;
+            }
+            fee = fee + role5_base;
         }
-        $("#instructorClassFee").html((fee - Dreduce_amount * 1000) + "元");
+        if (employee_role == 3) { // fee重置
+            fee = 0;
+            $("#employeeRole").html("销售总监");
+            if (ActualSales < MonthTarget) {
+                fee = fee + ActualSales * role3_miss;
+            } else {
+                fee = fee + ActualSales * role3_reach;
+            }
+            fee = fee + role3_base + recipe1_amount * recipe1_unit + recipe2_amount * recipe2_unit;
+        }
+        $("#employeeSalary").html((fee - Dreduce_amount * 1000) + "元");
     }
 </script>
