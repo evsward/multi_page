@@ -45,7 +45,8 @@
                         <label class="sr-only" for="DmonthTarget">Amount</label>
                         <div class="input-group">
                             <div class="input-group-addon">业绩指标</div>
-                            <input type="text" value="25" class="form-control" id="DmonthTarget" placeholder="本月销售业绩指标">
+                            <input type="text" value="254521" class="form-control" id="DmonthTarget"
+                                placeholder="本月销售业绩指标">
                             <div class="input-group-addon">元</div>
                         </div>
                     </div>
@@ -53,7 +54,8 @@
                         <label class="sr-only" for="DmonthSales">Amount</label>
                         <div class="input-group">
                             <div class="input-group-addon">实际业绩</div>
-                            <input type="text" value="30" class="form-control" id="DmonthSales" placeholder="本月实际总销售业绩">
+                            <input type="text" value="312931" class="form-control" id="DmonthSales"
+                                placeholder="本月实际总销售业绩">
                             <div class="input-group-addon">元</div>
                         </div>
                     </div>
@@ -423,6 +425,7 @@
             $("#employeeContribute").html(contribution);
             $("#employeeReduce").html(Dreduce_amount);
             $("#employeeNextPolicy").html("加油！");
+            fee = fee - Dreduce_amount * 1000;
             var carry = Dreduce_amount - 0.5;
             if (carry > 0) {
                 $("#employeeCarry").html(carry);
@@ -458,6 +461,7 @@
             }
             fee = fee + role3_base + recipe1_amount * recipe1_unit + recipe2_amount * recipe2_unit;
         }
-        $("#employeeSalary").html((fee - Dreduce_amount * 1000) + "元");
+        fee = new Number(fee).toFixed(0);
+        $("#employeeSalary").html(fee + "元");
     }
 </script>
