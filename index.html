@@ -24,14 +24,18 @@
         <div class="row">
             <div class="col-sm-6">
                 <h1 id="Ddate" title="对上个月进行结算"></h1>
-                <div class="form-group form-inline">
-                    <button onclick="instructor('Ava',1);" type="button" class="btn btn-primary">Ava</button>
-                    <button onclick="instructor('Miranda',1);" type="button" class="btn btn-success">Miranda</button>
-                    <button onclick="instructor('Jessie',1);" type="button" class="btn btn-info">Jessie</button>
-                </div>
-                <div class="form-group form-inline">
-                    <button onclick="instructor('Charles',2);" type="button"
-                        class="btn btn-warning">Charles（初级）</button>
+                <div class="instructors">
+                    <div class="form-group form-inline">
+                        <button onclick="instructor(this,'Ava',1);" type="button" class="btn btn-default">Ava</button>
+                        <button onclick="instructor(this,'Miranda',1);" type="button"
+                            class="btn btn-default">Miranda</button>
+                        <button onclick="instructor(this,'Jessie',1);" type="button"
+                            class="btn btn-default">Jessie</button>
+                    </div>
+                    <div class="form-group form-inline">
+                        <button onclick="instructor(this,'Charles',2);" type="button"
+                            class="btn btn-default">Charles（初级）</button>
+                    </div>
                 </div>
                 <div class="form-group form-inline">
                     <label class="sr-only" for="D400p">Amount</label>
@@ -249,12 +253,16 @@
             $("#Dpolicy").html("每节减" + flag + "元");
         }
     }
-    function instructor(name, level) {
+    function instructor(obj, name, level) {
         instructor_name = name;
         instructor_level = level;
+        $.each($(".instructors").find("button"), function () {
+            $(this).attr("class","btn btn-default");
+        });
+        $(obj).attr("class","btn btn-warning");
     }
     function calculate() {
-        if(instructor_name==null){
+        if (instructor_name == null) {
             alert("请选择教练！");
             return 0;
         }
