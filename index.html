@@ -290,6 +290,7 @@
         contribution = new Number(contribution).toFixed(3);
         $("#instructorContribute").html(contribution);
         $("#instructorReduce").html(Dreduce_amount);
+        $("#instructorNextPolicy").html("加油！");
         var carry = Dreduce_amount - 0.5;
         if (carry > 0) {
             $("#instructorCarry").html(carry);
